@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latha Dande | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            padding-top: 60px;
+            /* Pushes content down to accommodate header height */
+        }
+
+        header {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1001;
+            background: rgba(34, 34, 34, 0.9);
+            color: white;
+            /* padding: 0px; */
+        }
+
+        /* header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+} */
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+            /* Pushes links to the right */
+        }
+
+        .nav-links li {
+            margin: 0 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+            /* Space between icon and text */
+        }
+
+        .moving-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background: #ff9800;
+            /* Warm color for contrast */
+            /* padding: 10px 0; */
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            position: relative;
+        }
+
+        .moving-text p {
+            display: inline-block;
+            animation: moveText 4s linear infinite;
+            /* Smooth left-to-right animation */
+        }
+
+        @keyframes moveText {
+            from {
+                transform: translateX(-100%);
+            }
+
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        .home {
+            width: 100%;
+            padding-top: 80px;
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            text-align: left;
+            background: url('img bg.avif') no-repeat center center/cover;
+            min-height: 90vh;
+        }
+
+        /* Adding a semi-transparent dark overlay */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            /* Slightly lighter transparency */
+            z-index: 1;
+        }
+
+        /* Improving text readability */
+        .home-content {
+            max-width: 560px;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.2);
+            /* Darker background for contrast */
+            color: #f8f8f8;
+            /* Slightly off-white for softer contrast */
+            border-radius: 10px;
+            z-index: 2;
+            position: relative;
+            flex-grow: 1;
+            margin-left: 150px;
+        }
+
+        /* Adjusting button colors */
+        .resume-btn {
+            display: inline-block;
+            background-color: #ff9800;
+            /* Warm contrast */
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 15px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .resume-btn:hover {
+            background-color: #e68900;
+            /* Darker hover effect */
+        }
+
+        /* Profile image styles */
+        .home-image img {
+            margin-right: 200px;
+            width: 250px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid black;
+            z-index: 2;
+            position: relative;
+            margin-top: 100px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding-top: 24px;
+            /* Pushes content down to accommodate header height */
+            background: url('img bg.avif') no-repeat center center/cover;
+            /* Same Background as Home */
+            position: relative;
+            text-align: center;
+            padding: -0.10px 10px;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top:20px;
+        }
+
+        /* Overlay for Better Readability */
+        .skills::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            /* Semi-transparent Dark Overlay */
+            z-index: 1;
+        }
+
+        /* Skills Header */
+        .skills h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #B0B0B0;
+            /* Gray */
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .skills h2 {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #FFD700;
+            /* Gold */
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Skills Container */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 Columns */
+            gap: 30px;
+            /* Even Spacing for Rows & Columns */
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Skill Icons */
+
+        .skill {
+            width: 110px;
+            height: 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3rem;
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* .skills {
+    background: url('img bg.avif') no-repeat center center/cover;
+    position: relative;
+    text-align: center;
+    padding: 20px 10px; 
+    min-height: 60vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} */
+
+        /* Skill Name Tooltip */
+        .skill::after {
+            content: attr(data-skill);
+            position: absolute;
+            bottom: -0.0px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 10px;
+            border-radius: 5px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Hover Effects */
+        .skill:hover {
+            transform: scale(1.1);
+        }
+
+        .skill:hover::after {
+            opacity: 0.5;
+        }
+
+        /* Individual Skill Icon Colors */
+        .html i {
+            color: #E44D26;
+        }
+
+        /* HTML - Orange */
+        .css i {
+            color: #1572B6;
+        }
+
+        /* CSS - Blue */
+        .js i {
+            color: #F7DF1E;
+        }
+
+        /* JavaScript - Yellow */
+        .python i {
+            color: #3776AB;
+        }
+
+        /* Python - Blue */
+        .sql i {
+            color: #CC2927;
+        }
+
+        /* SQL - Red */
+        .git i {
+            color: #F05032;
+        }
+
+        /* Git - Orange-Red */
+        .pandas i {
+            color: #1B5E20;
+        }
+
+        /* Pandas - Dark Green */
+        .jupyter i {
+            color: #F37626;
+        }
+
+        /* Jupyter Notebook - Orange */
+        .pycharm i {
+            color: #21D789;
+        }
+
+        /* PyCharm - Green */
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 Columns */
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .skills-container {
+                grid-template-columns: repeat(1, 1fr);
+                /* 1 Column */
+            }
+        }
+
+        /* ======= Projects Section ======= */
+        .projects {
+            padding-top: calc(15px + 6vh);
+            /* Adjusted to ensure it clears the header */
+            margin-top: 20px;
+            /* Remove conflicting margin */
+            padding-bottom: 60px;
+            background: url('img bg.avif') no-repeat center center/cover;
+            text-align: center;
+        }
+
+        /* Projects Grid Container */
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Individual Project Card */
+        .project-card {
+            background: rgba(255, 255, 255, 0.2);
+            /* Light overlay */
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Project Hover Effect */
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Project Image */
+        .project-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Project Title */
+        .project-info h3 {
+            font-size: 1.6rem;
+            color: #f4f4f4;
+            margin: 10px 0;
+        }
+
+        /* Project Description */
+        .project-info p {
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+
+        /* Technology Icons */
+        .tech-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* Light Colors for Tech Icons */
+        .tech-icons i {
+            color: #FFCC80;
+            /* Soft Yellow */
+        }
+
+        /* Project Links */
+        .project-links {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        /* GitHub & Live Demo Buttons */
+        .project-links a {
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Button Hover Effect */
+        .project-links a:hover {
+            background: #ffffff;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ======= Contact Section ======= */
+        .contact {
+    margin-top: 20px;
+    position: relative;
+    background: url('img bg.avif') no-repeat center center/cover;
+    text-align: center;
+    padding: 40px 10px;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Contact Title */
+.contact h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Engaging Subtitle */
+.contact-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f8f8f8;
+    margin-bottom: 10px;
+}
+
+/* Friendly Message */
+.contact-message {
+    font-size: 1.2rem;
+    color: #ddd;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+/* Contact Links */
+.contact-links {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+}
+
+/* Contact Icons */
+.contact-links a {
+    text-decoration: none;
+    font-size: 60px;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+/* Soft Colors for Icons */
+.contact-links a:nth-child(1) { color: #A7C7E7; } /* LinkedIn */
+.contact-links a:nth-child(2) { color: #C3AED6; } /* GitHub */
+.contact-links a:nth-child(3) { color: #FFB6B9; } /* Email */
+
+/* Hover Effects */
+.contact-links a:hover {
+    transform: scale(1.2);
+    filter: brightness(1.3);
+}
+
+/* Responsive Contact Section */
+@media screen and (max-width: 768px) {
+    .contact {
+        padding: 100px 20px;
+    }
+    .contact h2 { font-size: 2.2rem; }
+    .contact-subtitle { font-size: 1.5rem; }
+    .contact-message { font-size: 1rem; }
+    .contact-links a { font-size: 50px; }
+}
+
+@media screen and (max-width: 480px) {
+    .contact { padding: 80px 10px; }
+    .contact h2 { font-size: 2rem; }
+    .contact-subtitle { font-size: 1.3rem; }
+    .contact-message { font-size: 0.9rem; }
+    .contact-links { gap: 20px; }
+    .contact-links a { font-size: 40px; }
+}
+        /* ======= Responsive Fixes ======= */
+        @media (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-container {
+                width: 90%;
+            }
+
+            .contact-icons a {
+                font-size: 40px;
+                /* Slightly smaller icons on smaller screens */
+            }
+        }
+
+        .copyright {
+            font-size: 1rem;
+            color: #ffffff;
+            margin-top: 80px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 class="name"><i class="fas fa-user-circle"></i>Latha Dande</h1>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+                <li><a href="#projects"><i class="fas fa-folder-open"></i> Projects</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="moving-text">
+        <p>Welcome to my portfolio</p>
+    </div>
+
+    <section id="home" class="home">
+        <div class="overlay"></div> <!-- Overlay for transparency effect -->
+        <div class="home-content">
+            <h1>Hi, I am </h1>
+            <h1><span style="color: orange;">Latha Dande</span></h1>
+            <p style="font-size: 18px;">I am an enthusiastic Data Analytics professional with a strong foundation in
+                data processing, visualization, and problem-solving. I am passionate about transforming raw data into
+                actionable insights that drive informed decision-making.</p>
+
+            <p style="font-size: 18px;">With a background in Electronics and Communication Engineering (ECE) and
+                hands-on experience in Python, SQL, Power BI, NumPy, Pandas, and Matplotlib, I thrive in analyzing
+                complex datasets and uncovering meaningful patterns.</p>
+
+            <p style="font-size: 18px;">I am eager to apply my analytical skills and technical expertise to solve
+                real-world business challenges. Constantly learning and adapting, I am committed to continuous growth in
+                the dynamic field of data analytics.</p>
+
+            <a href="DANDE LATHA.docx" class="resume-btn" target="_blank">Download Resume</a>
+        </div>
+        <div class="home-image">
+            <img src="DandeLatha.jpg" alt="Latha Dande">
+        </div>
+    </section>
+
+    <!-- Skills Section Body -->
+    <section id="skills" class="skills">
+        <h1>Skills</h1>
+        <h2>I am dedicated to enhancing and advancing my proficiency in the following skills.</h2>
+        <div class="skills-container">
+            <div class="skill html" data-skill="HTML"><i class="fab fa-html5"></i></div>
+            <div class="skill css" data-skill="CSS"><i class="fab fa-css3-alt"></i></div>
+            <div class="skill js" data-skill="JavaScript"><i class="fab fa-js"></i></div>
+            <div class="skill python" data-skill="Python"><i class="fab fa-python"></i></div>
+            <div class="skill sql" data-skill="SQL"><i class="fas fa-database"></i></div>
+            <div class="skill git" data-skill="Git"><i class="fab fa-git"></i></div>
+            <div class="skill pandas" data-skill="Pandas/Matplotlib"><i class="fas fa-chart-bar"></i></div>
+            <div class="skill jupyter" data-skill="Jupyter Notebook"><i class="fas fa-laptop-code"></i></div>
+            <div class="skill pycharm" data-skill="PyCharm"><i class="fas fa-code"></i></div>
+        </div>
+    </section>
+
+
+
+    <section id="projects" class="projects">
+        <h2 style="color: white;">Projects</h2>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <!-- <div class="project-card">
+            <img src="game.png" alt="Project 1">
+            <div class="project-info">
+                <h3>Rock-Paper-Scissors AI Duel</h3>
+                <div class="tech-icons">
+                    <i class="fab fa-python"></i> 
+                    <i class="fab fa-html5"></i>  
+                    <i class="fab fa-css3-alt"></i> 
+                    <i class="fab fa-js"></i> 
+                </div>
+                <p>An engaging and interactive Rock-Paper-Scissors game offering a smooth user experience with responsive design.</p>
+                <div class="project-links">
+                    <a href="https://github.com/LathaDande/game.git" target="_blank">GitHub</a>
+                    <a href="https://lathadande.github.io/game/" target="_blank">Live Demo</a>
+                </div>
+            </div>
+        </div> -->
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="Quizapp.webp" alt="Project 2">
+                <div class="project-info">
+                    <h3>IntelliQuiz</h3>
+                    <div class="tech-icons">
+                        <i class="fab fa-html5"></i> <!-- HTML -->
+                        <i class="fab fa-css3-alt"></i> <!-- CSS -->
+                        <i class="fab fa-js"></i> <!-- JavaScript -->
+                    </div>
+                    <p>A feature-rich quiz application that offers a seamless and interactive way to assess knowledge
+                        across various topics.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/LathaDande/Quiz-Application.git" target="_blank">GitHub</a>
+                        <a href="https://lathadande.github.io/Quiz-Application/" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="Imagecoverter.webp" alt="Project 3">
+                <div class="project-info">
+                    <h3>ImageFlex: Converter & Compressor</h3>
+                    <div class="tech-icons">
+                        <i class="fab fa-html5"></i> <!-- HTML -->
+                        <i class="fab fa-css3-alt"></i> <!-- CSS -->
+                        <i class="fab fa-js"></i> <!-- JavaScript -->
+                        <i class="fas fa-file-image"></i> <!-- Image File Icon -->
+                        <i class="fas fa-compress"></i> <!-- Compression Icon -->
+                    </div>
+                    <p>A versatile image conversion and compression tool that allows users to seamlessly transform
+                        images between various formats (e.g., JPG to PNG) while optimizing file size for efficient
+                        storage without compromising quality.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/LathaDande/Image-Converter.git" target="_blank">GitHub</a>
+                        <a href="https://lathadande.github.io/Image-Converter/" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="randamguess.webp" alt="Project 4">
+                <div class="project-info">
+                    <h3>Number Prediction Game</h3>
+                    <div class="tech-icons">
+                        <i class="fas fa-gamepad"></i>
+                        <i class="fas fa-sort-numeric-up"></i>
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <p>An interactive number guessing game where players try to predict a randomly selected number
+                        within a limited number of attempts, featuring user-friendly prompts and real-time feedback.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/LathaDande/Number_Guessing_Game.git" target="_blank">GitHub</a>
+                        <a href="https://colab.research.google.com/drive/1MNomlpzf6GiMQUlgQDu10fvJhkikrKrt?usp=sharing"
+                            target="_blank">Run in Google Colab</a>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="Employeeimg.webp" alt="Project 5">
+                <div class="project-info">
+                    <h3>Employee Management System</h3>
+                    <div class="tech-icons">
+                        <i class="fab fa-python"></i> <!-- Python -->
+                        <i class="fas fa-database"></i>
+                        <!-- Database (if using any DB like SQLite, MySQL, or PostgreSQL) -->
+                        <i class="fas fa-file-code"></i> <!-- General File Handling -->
+                        <i class="fas fa-edit"></i> <!-- CRUD Operations -->
+                    </div>
+                    <p>The project provides functionalities such as adding new employees, searching for employees based
+                        on specific criteria, updating employee information, and removing employees from the database..
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/LathaDande/CRUD-Operation-On-Employee-Management.git"
+                            target="_blank">GitHub</a>
+                        <a href="https://colab.research.google.com/drive/1_bz5AK6dTMobLHq-DzCwwQbPRY3NodoM?usp=sharing"
+                            target="_blank">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- 🔹 Contact Section -->
+<section id="contact" class="contact">
+    <h2>Contact</h2>
+    <h3 class="contact-subtitle">Feel free to reach out – I'm always happy to connect!</h3>
+    <p class="contact-message">Whether it's a project collaboration, a technical discussion, or just a friendly chat, I'm here to connect. Drop a message anytime!</p>
+    
+    <!-- Contact Links -->
+    <div class="contact-links">
+        <a href="https://linkedin.com/in/latha-dande" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/latha-dande" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="dandelatha412@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <!-- Copyright (Stays at the Bottom) -->
+    <p class="copyright">© 2025 Latha Dande. All rights reserved.</p>
+</section>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll(".nav-links a").forEach(link => {
+                link.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    document.querySelector(link.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
